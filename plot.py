@@ -14,7 +14,7 @@ with open('raw.csv', mode='r') as csv_file:
         print(f'\tIn {row["Year"]} there are {row["Live Births"]} {row["Race"]} were born.')
         race = row["Race"].split(" ")[0]
         births = int(row["Live Births"])
-        if race == 'All':
+        if race == 'All' or race == 'American':
             continue
         if data_json.get(row["Race"]) is None:
             data_json[race] = births
